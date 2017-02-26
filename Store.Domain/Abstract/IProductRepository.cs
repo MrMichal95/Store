@@ -7,7 +7,7 @@ using Store.Domain.Entities;
 
 namespace Store.Domain.Abstract
 {
-    interface IProductRepository
+    public interface IProductRepository
     {
         IEnumerable<Product> Products { get; }
     }
