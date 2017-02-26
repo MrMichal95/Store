@@ -41,7 +41,7 @@ namespace Store.Infrastructure
                 new Product {Name = "Buty", Price = 95}
             });
 
-            _kernel.Bind<IProductRepository>().ToConstant(mock.Object)
+            _kernel.Bind<IProductRepository>().ToConstant(mock.Object);
         }
     }
 }
