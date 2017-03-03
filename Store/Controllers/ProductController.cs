@@ -20,5 +20,9 @@ namespace Store.Controllers
         {
             return View(repository.Products);
         }
+        public ViewResult ListFiltered(string category)
+        {
+            return View(!string.IsNullOrEmpty(category) ? repository.Products.Where(x => x.Category == category) : repository.Products);
+        }
     }
 }
