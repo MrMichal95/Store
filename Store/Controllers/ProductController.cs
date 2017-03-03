@@ -7,6 +7,7 @@ using Store.Domain.Abstract;
 
 namespace Store.Controllers
 {
+    //TODO Create view model for ProductModel
     public class ProductController : Controller
     {
         private IProductRepository repository;
