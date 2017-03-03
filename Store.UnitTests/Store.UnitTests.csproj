@@ -109,6 +109,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="NavControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +117,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Store.Domain\Store.Domain.csproj">
+      <Project>{6C2C77EF-30D6-41FE-8C4A-76B50D4DBC03}</Project>
+      <Name>Store.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Store\Store.WebUI.csproj">
       <Project>{3128bb17-e46f-4991-8db5-81030cf9567c}</Project>
       <Name>Store.WebUI</Name>
