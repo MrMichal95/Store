@@ -1,11 +1,10 @@
-﻿@using Store.Domain.Entities
-@model IEnumerable<Store.Domain.Entities.Product>
+﻿@model Store.Models.ProductViewModel
 
 @{
     ViewBag.Title = "Products";
 }
 
-@foreach (var p in Model)
+@foreach (var p in Model.Products)
 {
     <div class="well">
         <h3>
@@ -15,5 +14,4 @@
         <span class="lead">@p.Description</span>
     </div>
 }
-
 
