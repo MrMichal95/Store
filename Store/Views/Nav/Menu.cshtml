@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<string> 
 @Html.ActionLink("All", "ListFiltered", "Product", null,
-new { @class = "btn btn-block btn-default btn-lg" })
+new { @class = "btn btn-block btn-default btn-lg" + (ViewBag.SelectedCategory == null ? " btn-primary" : "") })
 
 @foreach (var link in Model)
 {

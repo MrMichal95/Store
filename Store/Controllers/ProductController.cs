@@ -32,7 +32,7 @@ namespace Store.Controllers
                 }
                 : new ProductViewModel
                 {
-                    CurrentCategory = "All",
+                    CurrentCategory = null,
                     Products = repository.Products
                 };
 
