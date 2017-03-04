@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Store.Domain.Abstract;
+using Store.Models;
 
 namespace Store.Controllers
 {
@@ -23,7 +24,20 @@ namespace Store.Controllers
         }
         public ViewResult ListFiltered(string category)
         {
-            return View(!string.IsNullOrEmpty(category) ? repository.Products.Where(x => x.Category == category) : repository.Products);
+            ProductViewModel productViewModel = null;
+            productViewModel = category != null
+                ? new ProductViewModel
+                {
+                    CurrentCategory = category,
+                    Products = repository.Products.Where(p => p.Category == category)
+                }
+                : new ProductViewModel
+                {
+                    CurrentCategory = "All",
+                    Products = repository.Products
+                };
+
+            return View(productViewModel);
         }
     }
 }
