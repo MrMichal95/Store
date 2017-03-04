@@ -8,7 +8,6 @@ using Store.Models;
 
 namespace Store.Controllers
 {
-    //TODO Create view model for ProductModel
     public class ProductController : Controller
     {
         private IProductRepository repository;
