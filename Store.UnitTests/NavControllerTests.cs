@@ -36,5 +36,25 @@ namespace Store.UnitTests
             Assert.AreEqual(result[1], "Category2");
             Assert.AreEqual(result[2], "Category3");
         }
+
+        [Test]
+        public void NavControllerMenu_WhenCalled_IndicatesCurrentCategory()
+        {
+            Mock<IProductRepository> mock = new Mock<IProductRepository>();
+            mock.Setup(m => m.Products).Returns(new List<Product>()
+            {
+                new Product {ProductId = 1,Name="P1",Category = "Category1",},
+                new Product {ProductId = 2,Name="P2",Category = "Category1",},
+                new Product {ProductId = 3,Name="P3",Category = "Category2",},
+                new Product {ProductId = 4,Name="P4",Category = "Category3",}
+            });
+
+            NavController stubNavController = new NavController(mock.Object);
+
+            const string expected = "category1";
+            string actual = stubNavController.Menu(expected).ViewBag.SelectedCategory;
+
+            Assert.AreEqual(expected,actual);
+        }
     }
 }
